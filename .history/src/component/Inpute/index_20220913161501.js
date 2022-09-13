@@ -5,23 +5,6 @@ const Inpute = () => {
   const [title, setTitle] = useState("");
   const [count, setCount] = useState("");
   const [category, setCategory] = useState("");
-  const [price, setPrice] = useState("");
-  const [tva, setTva] = useState("");
-  const [ads, setAds] = useState("");
-  const [discount, setDiscount] = useState("");
-  const [total, setTotal] = useState("12345");
-  const params = {
-    price,
-    setPrice,
-    tva,
-    setTva,
-    ads,
-    setAds,
-    discount,
-    setDiscount,
-    total,
-    setTotal,
-  };
 
   return (
     <div className="input">
@@ -34,7 +17,7 @@ const Inpute = () => {
           setTitle(e.target.value);
         }}
       />
-      <InputTotal {...params} />
+      <InputTotal />
       <input
         placeholder="Count"
         id="Count"
@@ -55,14 +38,7 @@ const Inpute = () => {
           setCategory(e.target.value);
         }}
       />
-      <button
-        type="submit"
-        onClick={() =>
-          console.log(price, tva, ads, title, category, discount, count, total)
-        }
-      >
-        Create
-      </button>
+      <button type="submit">Create</button>
     </div>
   );
 };

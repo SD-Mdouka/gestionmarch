@@ -57,9 +57,16 @@ const Inpute = () => {
       />
       <button
         type="submit"
-        onClick={() =>
-          console.log(price, tva, ads, title, category, discount, count, total)
-        }
+        onClick={console.log(
+          price,
+          tva,
+          ads,
+          title,
+          category,
+          discount,
+          count,
+          total
+        )}
       >
         Create
       </button>

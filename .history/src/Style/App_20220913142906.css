@@ -1,0 +1,26 @@
+.crud {
+    width: 80%;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    color: #fff;
+    background-color: #222;
+    padding: 4px;
+    margin: 10px 0;
+}

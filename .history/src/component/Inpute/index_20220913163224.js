@@ -55,14 +55,7 @@ const Inpute = () => {
           setCategory(e.target.value);
         }}
       />
-      <button
-        type="submit"
-        onClick={() =>
-          console.log(price, tva, ads, title, category, discount, count, total)
-        }
-      >
-        Create
-      </button>
+      <button type="submit">Create</button>
     </div>
   );
 };

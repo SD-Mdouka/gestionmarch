@@ -82,42 +82,6 @@ button {
 }
 
 button:hover {
-    background-color: rgb(166, 159, 218);
+    background-color: slateblue;
     letter-spacing: 1px;
-}
-
-.btnSearch {
-    display: flex;
-    justify-content: space-between;
-}
-
-.btnSearch button {
-    width: 45%;
-}
-
-.table {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: rgb(133, 126, 126);
-    text-align: center;
-}
-
-.table-bordered {
-    border: 1px solid #eee;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-}
-
-.table th {
-    text-transform: uppercase;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.table button {
-    width: 60%;
 }

@@ -114,10 +114,5 @@ button:hover {
 
 .table th {
     text-transform: uppercase;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.table button {
-    width: 60%;
+    padding-top: 15px;
 }

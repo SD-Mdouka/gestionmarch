@@ -1,0 +1,10 @@
+.crud {
+    width: 80%;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px 0;
+}

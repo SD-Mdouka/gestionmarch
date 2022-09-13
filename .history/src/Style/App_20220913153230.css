@@ -111,13 +111,3 @@ button:hover {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-
-.table th {
-    text-transform: uppercase;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.table button {
-    width: 60%;
-}
