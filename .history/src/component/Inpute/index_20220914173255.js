@@ -24,41 +24,47 @@ const Inpute = () => {
     setTotal,
   };
   // state list object
-  const [productList, setProductList] = useState([
-    {
-      price,
-      tva,
-      ads,
-      discount,
-      total,
-      setPrice,
-      setTva,
-      setAds,
-      setDiscount,
-      setTotal,
-    },
-  ]);
-
-  const paramsListProd = {
-    productList,
-    setProductList,
-    price,
-    tva,
-    ads,
-    discount,
-    title,
-    count,
-    category,
-    total,
+  const initialValue = {
+    titleProduct: "",
+    priceProduct: "",
+    tvaProduct: "",
+    adsProduct: "",
+    discountProduct: "",
+    totalProduct: "",
+    countProduct: "",
+    categoryProduct: "",
   };
+  const [productList, setProductList] = useState([]);
+
   const handelCreate = () => {
-    console.log(CreateProduct({ ...paramsListProd }));
+    // const paramsListProd = {
+    //   productList,
+    //   setProductList,
+    //   price,
+    //   tva,
+    //   ads,
+    //   discount,
+    //   title,
+    //   count,
+    //   category,
+    //   total,
+    // };
+    let newPro = {
+      titleProduct: title,
+      priceProduct: price,
+      tvaProduct: tva,
+      adsProduct: ads,
+      discountProduct: discount,
+      totalProduct: total,
+      countProduct: count,
+      categoryProduct: category,
+    };
+    setProductList((list) => [...list, newPro]);
+    localStorage.setItem("product", JSON.stringify(productList));
+    return productList;
+    // console.log(CreateProduct({ ...paramsListProd }));
   };
   //function hooks
-  // useEffect(() => {
-  //   CreateProduct({ ...paramsListProd });
-  //   console.log(messageList);
-  // }, [socket]);
 
   return (
     <div className="input">
@@ -92,7 +98,9 @@ const Inpute = () => {
           setCategory(e.target.value);
         }}
       />
-      <button onClick={() => handelCreate()}>Create</button>
+      <button type="submit" onClick={handelCreate}>
+        Create
+      </button>
     </div>
   );
 };

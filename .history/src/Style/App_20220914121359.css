@@ -57,7 +57,15 @@ input:focus {
 }
 
 #total::before {
-    content: "Total =";
+    content: "Total  ";
+}
+
+.total-vert {
+    background-color: green;
+}
+
+.total-red {
+    background-color: red;
 }
 
 button {

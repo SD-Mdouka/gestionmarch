@@ -24,41 +24,15 @@ const Inpute = () => {
     setTotal,
   };
   // state list object
-  const [productList, setProductList] = useState([
-    {
-      price,
-      tva,
-      ads,
-      discount,
-      total,
-      setPrice,
-      setTva,
-      setAds,
-      setDiscount,
-      setTotal,
-    },
-  ]);
+  const [productList, setProductList] = useState([]);
 
-  const paramsListProd = {
-    productList,
-    setProductList,
-    price,
-    tva,
-    ads,
-    discount,
-    title,
-    count,
-    category,
-    total,
-  };
   const handelCreate = () => {
-    console.log(CreateProduct({ ...paramsListProd }));
+    setProductList((list) => [
+      ...list,
+      CreateProduct(price, tva, ads, discount, title, count, category, total),
+    ]);
   };
   //function hooks
-  // useEffect(() => {
-  //   CreateProduct({ ...paramsListProd });
-  //   console.log(messageList);
-  // }, [socket]);
 
   return (
     <div className="input">
@@ -92,7 +66,9 @@ const Inpute = () => {
           setCategory(e.target.value);
         }}
       />
-      <button onClick={() => handelCreate()}>Create</button>
+      <button type="submit" onClick={() => handelCreate()}>
+        Create
+      </button>
     </div>
   );
 };

@@ -64,7 +64,14 @@ const InputTotal = ({
           setDiscount(e.target.value);
         }}
       />
-      <small id="total">{total}</small>
+      <small
+        id="total"
+        className={`total-${
+          setTotal(getTotal(price, tva, ads, discount)) === "" ? "red" : "vert"
+        }`}
+      >
+        {total}
+      </small>
     </div>
   );
 };

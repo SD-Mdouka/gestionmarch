@@ -46,7 +46,6 @@ input:focus {
 }
 
 #total {
-    background-color: red;
     color: #eee;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -57,7 +56,15 @@ input:focus {
 }
 
 #total::before {
-    content: "Total =";
+    content: "Total  ";
+}
+
+.total-vert {
+    background-color: green;
+}
+
+.total-red {
+    background-color: red;
 }
 
 button {

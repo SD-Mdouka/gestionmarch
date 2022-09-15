@@ -24,20 +24,7 @@ const Inpute = () => {
     setTotal,
   };
   // state list object
-  const [productList, setProductList] = useState([
-    {
-      price,
-      tva,
-      ads,
-      discount,
-      total,
-      setPrice,
-      setTva,
-      setAds,
-      setDiscount,
-      setTotal,
-    },
-  ]);
+  const [productList, setProductList] = useState([]);
 
   const paramsListProd = {
     productList,

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { CreateProduct } from "../../helpers/CreateProduct";
+import React, { useState, useEffect } from "react";
 import InputTotal from "./InputTotal";
 
 const Inpute = () => {
@@ -24,42 +23,25 @@ const Inpute = () => {
     setTotal,
   };
   // state list object
-  const [productList, setProductList] = useState([
-    {
-      price,
-      tva,
-      ads,
-      discount,
-      total,
-      setPrice,
-      setTva,
-      setAds,
-      setDiscount,
-      setTotal,
-    },
-  ]);
-
-  const paramsListProd = {
-    productList,
-    setProductList,
-    price,
-    tva,
-    ads,
-    discount,
-    title,
-    count,
-    category,
-    total,
-  };
+  const [productList, setProductList] = useState([]);
   const handelCreate = () => {
-    console.log(CreateProduct({ ...paramsListProd }));
+    let newPro = {
+      titleProduct: title,
+      priceProduct: price,
+      tvaProduct: tva,
+      adsProduct: ads,
+      discountProduct: discount,
+      totalProduct: total,
+      countProduct: count,
+      categoryProduct: category,
+    };
+    setProductList(newPro);
+    console.log(productList);
   };
   //function hooks
   // useEffect(() => {
-  //   CreateProduct({ ...paramsListProd });
-  //   console.log(messageList);
-  // }, [socket]);
-
+  //   console.log(productList);
+  // }, [productList]);
   return (
     <div className="input">
       <input
@@ -92,7 +74,9 @@ const Inpute = () => {
           setCategory(e.target.value);
         }}
       />
-      <button onClick={() => handelCreate()}>Create</button>
+      <button type="submit" onClick={() => handelCreate()}>
+        Create
+      </button>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { getTotal } from "../../helpers/getTotal";
 
 const InputTotal = ({
@@ -20,10 +20,7 @@ const InputTotal = ({
         type={"number"}
         name="Price"
         value={price}
-        onKeyUp={() => {
-          getTotal(price, tva, ads, discount);
-          setTotal(getTotal(price, tva, ads, discount));
-        }}
+        onKeyUp={() => getTotal(price, tva, ads, discount, setTotal())}
         onChange={(e) => {
           setPrice(e.target.value);
         }}
@@ -33,9 +30,7 @@ const InputTotal = ({
         name="TVA"
         type={"number"}
         value={tva}
-        onKeyUp={() => {
-          setTotal(getTotal(price, tva, ads, discount));
-        }}
+        onKeyUp={() => getTotal(price, tva, ads, discount, setTotal())}
         onChange={(e) => {
           setTva(e.target.value);
         }}
@@ -45,9 +40,7 @@ const InputTotal = ({
         name="Ads"
         type={"number"}
         value={ads}
-        onKeyUp={() => {
-          setTotal(getTotal(price, tva, ads, discount));
-        }}
+        onKeyUp={() => getTotal(price, tva, ads, discount, setTotal())}
         onChange={(e) => {
           setAds(e.target.value);
         }}
@@ -57,9 +50,7 @@ const InputTotal = ({
         name="Discount"
         type={"number"}
         value={discount}
-        onKeyUp={() => {
-          setTotal(getTotal(price, tva, ads, discount));
-        }}
+        onKeyUp={() => getTotal(price, tva, ads, discount, setTotal())}
         onChange={(e) => {
           setDiscount(e.target.value);
         }}

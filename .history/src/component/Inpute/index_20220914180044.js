@@ -24,20 +24,17 @@ const Inpute = () => {
     setTotal,
   };
   // state list object
-  const [productList, setProductList] = useState([
-    {
-      price,
-      tva,
-      ads,
-      discount,
-      total,
-      setPrice,
-      setTva,
-      setAds,
-      setDiscount,
-      setTotal,
-    },
-  ]);
+  const initialValue = {
+    titleProduct: "",
+    priceProduct: "",
+    tvaProduct: "",
+    adsProduct: "",
+    discountProduct: "",
+    totalProduct: "",
+    countProduct: "",
+    categoryProduct: "",
+  };
+  const [productList, setProductList] = useState([]);
 
   const paramsListProd = {
     productList,
@@ -52,7 +49,7 @@ const Inpute = () => {
     total,
   };
   const handelCreate = () => {
-    console.log(CreateProduct({ ...paramsListProd }));
+    console.log(CreateProduct({ ...paramsListProd }) + "/" + productList);
   };
   //function hooks
   // useEffect(() => {

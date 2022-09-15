@@ -57,7 +57,7 @@ input:focus {
 }
 
 #total::before {
-    content: "Total =";
+    content: "Total  ";
 }
 
 button {

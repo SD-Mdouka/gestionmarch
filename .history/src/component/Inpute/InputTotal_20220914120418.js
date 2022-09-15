@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { getTotal } from "../../helpers/getTotal";
 
 const InputTotal = ({
@@ -34,6 +34,7 @@ const InputTotal = ({
         type={"number"}
         value={tva}
         onKeyUp={() => {
+          getTotal(price, tva, ads, discount);
           setTotal(getTotal(price, tva, ads, discount));
         }}
         onChange={(e) => {
@@ -46,6 +47,7 @@ const InputTotal = ({
         type={"number"}
         value={ads}
         onKeyUp={() => {
+          getTotal(price, tva, ads, discount);
           setTotal(getTotal(price, tva, ads, discount));
         }}
         onChange={(e) => {
@@ -58,6 +60,7 @@ const InputTotal = ({
         type={"number"}
         value={discount}
         onKeyUp={() => {
+          getTotal(price, tva, ads, discount);
           setTotal(getTotal(price, tva, ads, discount));
         }}
         onChange={(e) => {

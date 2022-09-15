@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { CreateProduct } from "../../helpers/CreateProduct";
 import InputTotal from "./InputTotal";
 
 const Inpute = () => {
@@ -23,42 +22,6 @@ const Inpute = () => {
     setDiscount,
     setTotal,
   };
-  // state list object
-  const [productList, setProductList] = useState([
-    {
-      price,
-      tva,
-      ads,
-      discount,
-      total,
-      setPrice,
-      setTva,
-      setAds,
-      setDiscount,
-      setTotal,
-    },
-  ]);
-
-  const paramsListProd = {
-    productList,
-    setProductList,
-    price,
-    tva,
-    ads,
-    discount,
-    title,
-    count,
-    category,
-    total,
-  };
-  const handelCreate = () => {
-    console.log(CreateProduct({ ...paramsListProd }));
-  };
-  //function hooks
-  // useEffect(() => {
-  //   CreateProduct({ ...paramsListProd });
-  //   console.log(messageList);
-  // }, [socket]);
 
   return (
     <div className="input">
@@ -92,7 +55,14 @@ const Inpute = () => {
           setCategory(e.target.value);
         }}
       />
-      <button onClick={() => handelCreate()}>Create</button>
+      <button
+        type="submit"
+        onClick={() =>
+          console.log(price, tva, ads, title, category, discount, count, total)
+        }
+      >
+        Create
+      </button>
     </div>
   );
 };
