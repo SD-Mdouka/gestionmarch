@@ -24,12 +24,19 @@ const Inpute = () => {
     setTotal,
   };
   // state list object
-  let productList;
-  if (localStorage.product != null) {
-    productList = JSON.parse(localStorage.product);
-  } else {
-    productList = [];
-  }
+  const [productList, setProductList] = useState([
+    {
+      titleProduct: title,
+      priceProduct: price,
+      tvaProduct: tva,
+      adsProduct: ads,
+      discountProduct: discount,
+      totalProduct: total,
+      countProduct: count,
+      categoryProduct: category,
+    },
+  ]);
+
   const handelCreate = () => {
     let newPro = {
       titleProduct: title,
@@ -41,7 +48,7 @@ const Inpute = () => {
       countProduct: count,
       categoryProduct: category,
     };
-    productList.push(newPro);
+    setProductList([...newPro]);
     localStorage.setItem("product", JSON.stringify(productList));
     console.log(productList);
   };

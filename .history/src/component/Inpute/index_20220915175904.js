@@ -26,7 +26,7 @@ const Inpute = () => {
   // state list object
   let productList;
   if (localStorage.product != null) {
-    productList = JSON.parse(localStorage.product);
+    productList = localStorage.product;
   } else {
     productList = [];
   }

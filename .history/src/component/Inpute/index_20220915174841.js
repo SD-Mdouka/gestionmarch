@@ -24,12 +24,8 @@ const Inpute = () => {
     setTotal,
   };
   // state list object
-  let productList;
-  if (localStorage.product != null) {
-    productList = JSON.parse(localStorage.product);
-  } else {
-    productList = [];
-  }
+  let productList = [];
+
   const handelCreate = () => {
     let newPro = {
       titleProduct: title,
