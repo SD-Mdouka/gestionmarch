@@ -2,7 +2,7 @@ import React from "react";
 import { ClearIndput } from "../../helpers/ClearInput";
 import { CreateProduct, ReadList } from "../../helpers/CreateProduct";
 import InputTotal from "./InputTotal";
-const Inpute = ({ btnUpdate, setBtnUpdate, NbIndex }) => {
+const Inpute = ({ btnUpdate, setBtnUpdate }) => {
   let mode;
   const handelCreat = () => {
     //object list product
@@ -11,8 +11,7 @@ const Inpute = ({ btnUpdate, setBtnUpdate, NbIndex }) => {
       CreateProduct(mode);
     } else {
       mode = "Update";
-      CreateProduct(mode, NbIndex);
-      setBtnUpdate(false);
+      CreateProduct(mode);
     }
     ClearIndput();
     ClearIndput();

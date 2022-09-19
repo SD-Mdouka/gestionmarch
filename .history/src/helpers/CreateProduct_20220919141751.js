@@ -4,7 +4,7 @@ if (localStorage.product != null) {
 } else {
   productList = [];
 }
-export function CreateProduct(mode, NbIndex) {
+export function CreateProduct() {
   // input data product
   let inputTitle = document.getElementById("inputTitle");
   let inputCount = document.getElementById("inputCount");
@@ -28,21 +28,17 @@ export function CreateProduct(mode, NbIndex) {
     categoryProduct: inputCategory.value,
   };
   //create product with number the count
-  if (mode === "Create") {
-    if (newPro.countProduct > 1) {
-      for (let i = 0; i < newPro.countProduct; i++) {
-        productList.push(newPro);
-      }
-    } else {
+  if (newPro.countProduct > 1) {
+    for (let i = 0; i < newPro.countProduct; i++) {
       productList.push(newPro);
     }
-    // //save in local storage
-    localStorage.setItem("product", JSON.stringify(productList));
-    window.location.reload();
-  } else if (mode === "Update") {
-    productList[NbIndex] = newPro;
-    inputCount.style.display = "block";
+  } else {
+    productList.push(newPro);
   }
+
+  // //save in local storage
+  localStorage.setItem("product", JSON.stringify(productList));
+  window.location.reload();
 }
 export function ReadList() {
   return productList;

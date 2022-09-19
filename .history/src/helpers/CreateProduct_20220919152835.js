@@ -40,8 +40,7 @@ export function CreateProduct(mode, NbIndex) {
     localStorage.setItem("product", JSON.stringify(productList));
     window.location.reload();
   } else if (mode === "Update") {
-    productList[NbIndex] = newPro;
-    inputCount.style.display = "block";
+    console.log(mode + " " + NbIndex);
   }
 }
 export function ReadList() {

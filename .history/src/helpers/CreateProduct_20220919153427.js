@@ -41,7 +41,6 @@ export function CreateProduct(mode, NbIndex) {
     window.location.reload();
   } else if (mode === "Update") {
     productList[NbIndex] = newPro;
-    inputCount.style.display = "block";
   }
 }
 export function ReadList() {

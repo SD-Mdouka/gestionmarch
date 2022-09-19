@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import { ReadList } from "../../helpers/CreateProduct";
 import { deleteData, deleteAllData } from "../../helpers/deleteData";
-import { getTotal } from "../../helpers/getTotal";
-import { updateData } from "../../helpers/UpdateData";
 
-const ListProduct = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
+const ListProduct = () => {
   useEffect(() => {
     ReadList();
   }, []);
@@ -12,7 +10,7 @@ const ListProduct = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
     <>
       {ReadList().length > 0 ? (
         <button onClick={() => deleteAllData(ReadList())} id="btnUpdate">
-          Delete All ({ReadList().length})
+          Delete All
         </button>
       ) : (
         ""
@@ -38,24 +36,14 @@ const ListProduct = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
               <tr key={index}>
                 <td>{index}</td>
                 <td>{productList.titleProduct}</td>
-                <td>{productList.priceProduct}</td>
                 <td>{productList.tvaProduct}</td>
                 <td>{productList.adsProduct}</td>
                 <td>{productList.discountProduct}</td>
                 <td>{productList.totalProduct}</td>
+                <td>{productList.countProduct}</td>
                 <td>{productList.categoryProduct}</td>
                 <td>
-                  <button
-                    onClick={() => {
-                      updateData(index, ReadList());
-                      getTotal();
-                      setBtnUpdate(true);
-                      setNbIndex(index);
-                    }}
-                    id="btnUpdate"
-                  >
-                    Update
-                  </button>
+                  <button id="btnUpdate">Update</button>
                 </td>
                 <td>
                   <button

@@ -1,12 +1,10 @@
 import React from "react";
 import ListProduct from "./ListProduct";
 
-const OutPute = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
+const OutPute = ({ btnUpdate, setBtnUpdate }) => {
   const params = {
     btnUpdate,
     setBtnUpdate,
-    NbIndex,
-    setNbIndex,
   };
   return (
     <div className="output">

@@ -16,7 +16,7 @@ const Layout = () => {
   //
   //List product
   const [btnUpdate, setBtnUpdate] = useState(false);
-  const [NbIndex, setNbIndex] = useState("");
+
   const params = {
     // inputPrice,
     // inputTva,
@@ -28,8 +28,6 @@ const Layout = () => {
     // totalId,
     btnUpdate,
     setBtnUpdate,
-    NbIndex,
-    setNbIndex,
   };
 
   // state list object

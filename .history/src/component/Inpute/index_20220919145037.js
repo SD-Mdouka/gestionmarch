@@ -2,19 +2,10 @@ import React from "react";
 import { ClearIndput } from "../../helpers/ClearInput";
 import { CreateProduct, ReadList } from "../../helpers/CreateProduct";
 import InputTotal from "./InputTotal";
-const Inpute = ({ btnUpdate, setBtnUpdate, NbIndex }) => {
-  let mode;
+const Inpute = () => {
   const handelCreat = () => {
     //object list product
-    if (!btnUpdate) {
-      mode = "Create";
-      CreateProduct(mode);
-    } else {
-      mode = "Update";
-      CreateProduct(mode, NbIndex);
-      setBtnUpdate(false);
-    }
-    ClearIndput();
+    CreateProduct();
     ClearIndput();
     ReadList();
   };
@@ -30,9 +21,7 @@ const Inpute = ({ btnUpdate, setBtnUpdate, NbIndex }) => {
         name="Category"
         type={"text"}
       />
-      <button onClick={() => handelCreat()}>
-        {!btnUpdate ? "Create" : "Update"}
-      </button>
+      <button onClick={() => handelCreat()}>Create</button>
     </div>
   );
 };

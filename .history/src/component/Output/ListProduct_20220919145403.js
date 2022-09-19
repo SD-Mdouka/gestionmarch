@@ -4,7 +4,7 @@ import { deleteData, deleteAllData } from "../../helpers/deleteData";
 import { getTotal } from "../../helpers/getTotal";
 import { updateData } from "../../helpers/UpdateData";
 
-const ListProduct = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
+const ListProduct = ({ btnUpdate, setBtnUpdate }) => {
   useEffect(() => {
     ReadList();
   }, []);
@@ -50,7 +50,6 @@ const ListProduct = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
                       updateData(index, ReadList());
                       getTotal();
                       setBtnUpdate(true);
-                      setNbIndex(index);
                     }}
                     id="btnUpdate"
                   >

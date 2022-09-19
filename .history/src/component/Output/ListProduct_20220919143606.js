@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { ReadList } from "../../helpers/CreateProduct";
 import { deleteData, deleteAllData } from "../../helpers/deleteData";
-import { getTotal } from "../../helpers/getTotal";
 import { updateData } from "../../helpers/UpdateData";
 
-const ListProduct = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
+const ListProduct = () => {
   useEffect(() => {
     ReadList();
   }, []);
@@ -46,12 +45,7 @@ const ListProduct = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
                 <td>{productList.categoryProduct}</td>
                 <td>
                   <button
-                    onClick={() => {
-                      updateData(index, ReadList());
-                      getTotal();
-                      setBtnUpdate(true);
-                      setNbIndex(index);
-                    }}
+                    onClick={() => updateData(index, ReadList())}
                     id="btnUpdate"
                   >
                     Update

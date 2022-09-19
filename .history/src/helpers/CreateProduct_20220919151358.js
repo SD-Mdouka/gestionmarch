@@ -4,7 +4,7 @@ if (localStorage.product != null) {
 } else {
   productList = [];
 }
-export function CreateProduct(mode, NbIndex) {
+export function CreateProduct(mode) {
   // input data product
   let inputTitle = document.getElementById("inputTitle");
   let inputCount = document.getElementById("inputCount");
@@ -36,13 +36,12 @@ export function CreateProduct(mode, NbIndex) {
     } else {
       productList.push(newPro);
     }
-    // //save in local storage
-    localStorage.setItem("product", JSON.stringify(productList));
-    window.location.reload();
   } else if (mode === "Update") {
-    productList[NbIndex] = newPro;
-    inputCount.style.display = "block";
+    console.log(mode);
   }
+  // //save in local storage
+  localStorage.setItem("product", JSON.stringify(productList));
+  window.location.reload();
 }
 export function ReadList() {
   return productList;
