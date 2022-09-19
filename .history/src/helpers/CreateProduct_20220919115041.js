@@ -36,3 +36,7 @@ export function CreateProduct() {
 export function ReadList() {
   return productList;
 }
+export function deleteData(i) {
+  productList.splice(i, 0);
+  console.log(productList[i]);
+}

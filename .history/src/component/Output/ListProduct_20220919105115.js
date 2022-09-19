@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { ReadList } from "../../helpers/CreateProduct";
-import { deleteData } from "../../helpers/deleteData";
 
-const ListProduct = () => {
+const ListProduct = ({ productList }) => {
   useEffect(() => {
+    console.log(productList);
     ReadList();
   }, []);
   return (
@@ -39,15 +39,7 @@ const ListProduct = () => {
                   <button id="btnUpdate">Update</button>
                 </td>
                 <td>
-                  <button
-                    
-                   
-                  
-                    onClick={() => deleteData(index, ReadList())}
-                    id="btnDelete"
-                  >
-                    Delete
-                  </button>
+                  <button id="btnDelete">Delete</button>
                 </td>
               </tr>
             );

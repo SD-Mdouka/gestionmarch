@@ -34,5 +34,11 @@ export function CreateProduct() {
   window.location.reload();
 }
 export function ReadList() {
+  window.location.reload();
   return productList;
+}
+export function deleteData(i) {
+  productList.splice(i, 1);
+  localStorage.product = JSON.stringify(productList);
+  ReadList();
 }

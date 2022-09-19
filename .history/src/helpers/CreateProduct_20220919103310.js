@@ -31,8 +31,34 @@ export function CreateProduct() {
 
   // //save in local storage
   localStorage.setItem("product", JSON.stringify(productList));
-  window.location.reload();
+  // return productList;
 }
 export function ReadList() {
-  return productList;
+  let table = "";
+  // The code below should help
+  for (let i = 0; i < productList.length; i++) {
+    let btn = document.createElement("button");
+    btn.innerHTML = "Submit";
+    btn.type = "submit";
+    btn.name = "formBtn";
+
+    table += `
+              <tr >
+                 <td>${i}</td>
+                 <td>${productList[i].titleProduct}</td>
+                 <td>${productList[i].tvaProduct}</td>
+                 <td>${productList[i].adsProduct}</td>
+                 <td>${productList[i].discountProduct}</td>
+                 <td>${productList[i].totalProduct}</td>
+                 <td>${productList[i].countProduct}</td>
+                 <td>${productList[i].categoryProduct}</td>
+                 
+                 <td >
+                   <button id="btnUpdate">Update</button>
+                 </td>
+                 <td >
+                 </td>
+               </tr>`;
+  }
+  document.getElementById("tbody").innerHTML = table;
 }

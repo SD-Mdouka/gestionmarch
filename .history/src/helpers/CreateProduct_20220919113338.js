@@ -36,3 +36,10 @@ export function CreateProduct() {
 export function ReadList() {
   return productList;
 }
+export function deleteData(i) {
+  for (let index = 0; index < productList.length; index++) {
+    if (productList[index] === productList[i]) {
+      return console.log("delet   " + [...productList]);
+    }
+  }
+}

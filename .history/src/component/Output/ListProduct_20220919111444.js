@@ -39,13 +39,7 @@ const ListProduct = () => {
                   <button id="btnUpdate">Update</button>
                 </td>
                 <td>
-                  <button
-                    
-                   
-                  
-                    onClick={() => deleteData(index, ReadList())}
-                    id="btnDelete"
-                  >
+                  <button onClick={() => deleteData({ index })} id="btnDelete">
                     Delete
                   </button>
                 </td>

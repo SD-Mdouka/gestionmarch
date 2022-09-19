@@ -2,12 +2,13 @@ import React, { useState, useRef } from "react";
 import { ClearIndput } from "../../helpers/ClearInput";
 import { CreateProduct, ReadList } from "../../helpers/CreateProduct";
 import InputTotal from "./InputTotal";
-const Inpute = ({}) => {
+const Inpute = ({ setProductList }) => {
   const handelCreat = () => {
     //object list product
-    CreateProduct();
+    let list = CreateProduct();
     ClearIndput();
-    ReadList();
+
+    setProductList([...list]);
   };
 
   return (

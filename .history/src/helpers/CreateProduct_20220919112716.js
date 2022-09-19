@@ -36,3 +36,6 @@ export function CreateProduct() {
 export function ReadList() {
   return productList;
 }
+export function deleteData(i) {
+  return console.log("delet   " + productList[i]);
+}

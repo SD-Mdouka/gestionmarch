@@ -36,18 +36,19 @@ const ListProduct = () => {
                 <td>{productList.countProduct}</td>
                 <td>{productList.categoryProduct}</td>
                 <td>
-                  <button id="btnUpdate">Update</button>
+                  <button
+                    onClick={() =>
+                      function deleteData(i) {
+                        console.log("delet   " + i);
+                      }
+                    }
+                    id="btnUpdate"
+                  >
+                    Update
+                  </button>
                 </td>
                 <td>
-                  <button
-                    
-                   
-                  
-                    onClick={() => deleteData(index, ReadList())}
-                    id="btnDelete"
-                  >
-                    Delete
-                  </button>
+                  <button id="btnDelete">Delete</button>
                 </td>
               </tr>
             );

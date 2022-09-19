@@ -31,7 +31,8 @@ export function CreateProduct() {
 
   // //save in local storage
   localStorage.setItem("product", JSON.stringify(productList));
-  window.location.reload();
+  // window.location.reload();
+  return productList;
 }
 export function ReadList() {
   return productList;

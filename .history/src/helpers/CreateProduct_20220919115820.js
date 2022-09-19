@@ -36,3 +36,8 @@ export function CreateProduct() {
 export function ReadList() {
   return productList;
 }
+export function deleteData(i) {
+  productList.splice(i, 1);
+  localStorage.product = JSON.stringify(productList);
+  ReadList();
+}

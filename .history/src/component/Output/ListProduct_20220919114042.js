@@ -40,9 +40,6 @@ const ListProduct = () => {
                 </td>
                 <td>
                   <button
-                    
-                   
-                  
                     onClick={() => deleteData(index, ReadList())}
                     id="btnDelete"
                   >

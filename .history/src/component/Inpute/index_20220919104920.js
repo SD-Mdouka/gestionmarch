@@ -7,7 +7,8 @@ const Inpute = ({}) => {
     //object list product
     CreateProduct();
     ClearIndput();
-    ReadList();
+    // ReadList();
+    setProductList([...CreateProduct()]);
   };
 
   return (

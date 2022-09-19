@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 import { ReadList } from "../../helpers/CreateProduct";
-import { deleteData } from "../../helpers/deleteData";
 
-const ListProduct = () => {
-  useEffect(() => {
-    ReadList();
-  }, []);
+const ListProduct = ({ productList }) => {
   return (
     <>
       <table className="table table-bordered table-hover">
@@ -24,30 +20,22 @@ const ListProduct = () => {
           </tr>
         </thead>
         <tbody id="tbody">
-          {ReadList().map((productList, index) => {
+          {productList.map((list, index) => {
             return (
               <tr key={index}>
                 <td>{index}</td>
-                <td>{productList.titleProduct}</td>
-                <td>{productList.tvaProduct}</td>
-                <td>{productList.adsProduct}</td>
-                <td>{productList.discountProduct}</td>
-                <td>{productList.totalProduct}</td>
-                <td>{productList.countProduct}</td>
-                <td>{productList.categoryProduct}</td>
+                <td>{list.titleProduct}</td>
+                <td>{list.tvaProduct}</td>
+                <td>{list.adsProduct}</td>
+                <td>{list.discountProduct}</td>
+                <td>{list.totalProduct}</td>
+                <td>{list.countProduct}</td>
+                <td>{list.categoryProduct}</td>
                 <td>
                   <button id="btnUpdate">Update</button>
                 </td>
                 <td>
-                  <button
-                    
-                   
-                  
-                    onClick={() => deleteData(index, ReadList())}
-                    id="btnDelete"
-                  >
-                    Delete
-                  </button>
+                  <button id="btnDelete">Delete</button>
                 </td>
               </tr>
             );
