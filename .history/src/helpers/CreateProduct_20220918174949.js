@@ -1,0 +1,56 @@
+import { ClearIndput } from "./ClearInput";
+// state list object
+let productList;
+if (localStorage.product != null) {
+  productList = JSON.parse(localStorage.product);
+} else {
+  productList = [];
+}
+
+export function CreateProduct(
+  title,
+  price,
+  tva,
+  ads,
+  discount,
+  total,
+  count,
+  category,
+  inputTitle,
+  inputPrice,
+  inputTva,
+  inputAds,
+  inputDiscount,
+  inputCount,
+  inputCategory,
+  totalId
+) {
+  //object list product
+  let newPro = {
+    titleProduct: title,
+    priceProduct: price,
+    tvaProduct: tva,
+    adsProduct: ads,
+    discountProduct: discount,
+    totalProduct: total,
+    countProduct: count,
+    categoryProduct: category,
+  };
+  ClearIndput(
+    inputTitle,
+    inputPrice,
+    inputTva,
+    inputAds,
+    inputDiscount,
+    inputCount,
+    inputCategory,
+    totalId
+  );
+  productList.push(newPro);
+  //save in local storage
+  localStorage.setItem("product", JSON.stringify(productList));
+  return productList;
+}
+export function ShowProducts() {
+  return productList;
+}
