@@ -1,0 +1,25 @@
+export function getSearch(mode) {
+  let inputSerach = document.getElementById("inputSerach");
+  if (mode === "SerchByTitel") {
+    inputSerach.placeholder = "Serach By Titel";
+  } else if (mode === "SerchByCategory") {
+    inputSerach.placeholder = "Serach By Category";
+  }
+  inputSerach.focus();
+}
+
+export function SearchData(vlaue, mode, productList) {
+  if (mode === "SerchByTitel") {
+    for (let index = 0; index < productList.length; index++) {
+      if (productList[index].titleProduct === vlaue) {
+        console.log("element  " + vlaue);
+      }
+    }
+  } else if (mode === "SerchByCategory") {
+    for (let index = 0; index < productList.length; index++) {
+      if (productList[index].categoryProduct === vlaue) {
+        console.log("element  " + vlaue);
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { getSearch, SearchData } from "../../helpers/Search";
-import { ReadList } from "../../helpers/CreateProduct";
 import ListProduct from "./ListProduct";
 
 const OutPute = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
+  // const [Search, setSearch] = useState("");
   const handelSearch = (mode) => {
     getSearch(mode);
   };
@@ -17,13 +17,12 @@ const OutPute = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
     <div className="output">
       <div className="searchBlock">
         <input
-          placeholder="Serach By Titel"
+          placeholder="Searche"
           id="inputSerach"
           name="Searche"
           type={"text"}
-          onKeyUp={(e) =>
-            SearchData(e.target.value, "SerchByTitel", ReadList())
-          }
+          value={Search}
+          onKeyUp={(e) => SearchData(e.target.value)}
         />
         <div className="btnSearch">
           <button
