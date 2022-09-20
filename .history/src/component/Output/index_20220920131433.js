@@ -28,8 +28,8 @@ const OutPute = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
             if (e.target.value === "") {
               setModeList(true);
             } else {
-              setListSearch(SearchData(e.target.value, ReadList()));
               setModeList(false);
+              setListSearch(SearchData(e.target.value, ReadList()));
             }
           }}
         />

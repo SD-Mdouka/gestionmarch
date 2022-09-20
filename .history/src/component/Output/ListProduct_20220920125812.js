@@ -4,12 +4,19 @@ import { deleteData, deleteAllData } from "../../helpers/deleteData";
 import { getTotal } from "../../helpers/getTotal";
 import { updateData } from "../../helpers/UpdateData";
 
-const ListProduct = ({ setBtnUpdate, setNbIndex, ModeList, ListSearch }) => {
-  let ListProduct;
-  if (ModeList) {
+const ListProduct = ({
+  setBtnUpdate,
+  setNbIndex,
+  ListProduct,
+  setListProduct,
+  ListSearchProduc,
+  setListSearchProduct,
+}) => {
+  let list;
+  if (ListSearchProduc) {
     ListProduct = ReadList();
   } else {
-    ListProduct = ListSearch;
+    ListProduct = [];
   }
   useEffect(() => {
     ReadList();
@@ -42,7 +49,7 @@ const ListProduct = ({ setBtnUpdate, setNbIndex, ModeList, ListSearch }) => {
           {ListProduct.map((productList, index) => {
             return (
               <tr key={index}>
-                <td>{index + 1}</td>
+                <td>{index}</td>
                 <td>{productList.titleProduct}</td>
                 <td>{productList.priceProduct}</td>
                 <td>{productList.tvaProduct}</td>

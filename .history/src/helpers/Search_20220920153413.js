@@ -14,19 +14,17 @@ export function getSearch(mode) {
 
 export function SearchData(vlaue, productList) {
   let list = [];
-  if (searchMode === "Titel") {
-    for (let i = 0; i < productList.length; i++) {
+  for (let i = 0; i < productList.length; i++) {
+    if (searchMode === "Titel") {
       if (productList[i].titleProduct.includes(vlaue)) {
         list.push(productList[i]);
       }
-    }
-    return list;
-  } else {
-    for (let i = 0; i < productList.length; i++) {
+      return list;
+    } else {
       if (productList[i].categoryProduct.includes(vlaue)) {
         list.push(productList[i]);
       }
+      return list;
     }
-    return list;
   }
 }

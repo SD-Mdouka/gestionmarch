@@ -4,21 +4,15 @@ import { deleteData, deleteAllData } from "../../helpers/deleteData";
 import { getTotal } from "../../helpers/getTotal";
 import { updateData } from "../../helpers/UpdateData";
 
-const ListProduct = ({ setBtnUpdate, setNbIndex, ModeList, ListSearch }) => {
-  let ListProduct;
-  if (ModeList) {
-    ListProduct = ReadList();
-  } else {
-    ListProduct = ListSearch;
-  }
+const ListProduct = ({ setBtnUpdate, setNbIndex, List }) => {
   useEffect(() => {
     ReadList();
   }, []);
   return (
     <>
-      {ListProduct.length > 0 ? (
-        <button onClick={() => deleteAllData(ListProduct)} id="btnUpdate">
-          Delete All ({ListProduct.length})
+      {ReadList().length > 0 ? (
+        <button onClick={() => deleteAllData(ReadList())} id="btnUpdate">
+          Delete All ({ReadList().length})
         </button>
       ) : (
         ""
@@ -39,10 +33,10 @@ const ListProduct = ({ setBtnUpdate, setNbIndex, ModeList, ListSearch }) => {
           </tr>
         </thead>
         <tbody id="tbody">
-          {ListProduct.map((productList, index) => {
+          {List.map((productList, index) => {
             return (
               <tr key={index}>
-                <td>{index + 1}</td>
+                <td>{index}</td>
                 <td>{productList.titleProduct}</td>
                 <td>{productList.priceProduct}</td>
                 <td>{productList.tvaProduct}</td>

@@ -1,4 +1,3 @@
-import { ClearIndput } from "./ClearInput";
 let productList;
 if (localStorage.product != null) {
   productList = JSON.parse(localStorage.product);
@@ -31,12 +30,11 @@ export function CreateProduct(mode, NbIndex) {
   //create product with number the count
   //clean data for input
   if (
-    inputTitle.value !== "" &&
-    inputPrice.value !== "" &&
-    inputTva.value !== "" &&
-    inputAds.value !== "" &&
-    inputDiscount.value !== "" &&
-    inputCount.value < 100
+    inputTitle.value != "" &&
+    inputPrice.value != "" &&
+    inputTva.value != "" &&
+    inputAds.value != "" &&
+    inputDiscount.value != ""
   ) {
     if (mode === "Create") {
       if (newPro.countProduct > 1) {
@@ -55,7 +53,6 @@ export function CreateProduct(mode, NbIndex) {
 
       inputCount.style.display = "block";
     }
-    ClearIndput();
   }
 }
 export function ReadList() {

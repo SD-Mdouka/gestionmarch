@@ -13,8 +13,6 @@ const OutPute = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
     setNbIndex,
     ModeList,
     setModeList,
-    ListSearch,
-    setListSearch,
   };
   return (
     <div className="output">
@@ -28,8 +26,8 @@ const OutPute = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
             if (e.target.value === "") {
               setModeList(true);
             } else {
-              setListSearch(SearchData(e.target.value, ReadList()));
               setModeList(false);
+              SearchData(e.target.value, ReadList());
             }
           }}
         />

@@ -4,40 +4,40 @@ import { ReadList } from "../../helpers/CreateProduct";
 import ListProduct from "./ListProduct";
 
 const OutPute = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
-  const [ModeList, setModeList] = useState(true);
-  const [ListSearch, setListSearch] = useState([]);
+  const [List, setList] = useState([]);
+  const handelSearch = (mode) => {
+    getSearch(mode);
+  };
   const params = {
     btnUpdate,
     setBtnUpdate,
     NbIndex,
     setNbIndex,
-    ModeList,
-    setModeList,
-    ListSearch,
-    setListSearch,
+    List,
   };
   return (
     <div className="output">
       <div className="searchBlock">
         <input
-          placeholder="Serach"
+          placeholder="Serach By Titel"
           id="inputSerach"
           name="Searche"
           type={"text"}
-          onKeyUp={(e) => {
-            if (e.target.value === "") {
-              setModeList(true);
-            } else {
-              setListSearch(SearchData(e.target.value, ReadList()));
-              setModeList(false);
-            }
-          }}
+          onKeyUp={(e) =>
+            setList(SearchData(e.target.value, "SerchByTitel", ReadList()))
+          }
         />
         <div className="btnSearch">
-          <button onClick={(e) => getSearch(e.target.id)} id="SearchByTitle">
+          <button
+            onClick={() => handelSearch("SerchByTitel")}
+            id="SearchByTitle"
+          >
             Search By Title
           </button>
-          <button onClick={(e) => getSearch(e.target.id)} id="SearchByCategory">
+          <button
+            onClick={() => handelSearch("SerchByCategory")}
+            id="SearchByCategory"
+          >
             Search By Category
           </button>
         </div>

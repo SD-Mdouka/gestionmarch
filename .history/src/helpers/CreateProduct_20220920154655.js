@@ -35,8 +35,7 @@ export function CreateProduct(mode, NbIndex) {
     inputPrice.value !== "" &&
     inputTva.value !== "" &&
     inputAds.value !== "" &&
-    inputDiscount.value !== "" &&
-    inputCount.value < 100
+    inputDiscount.value !== ""
   ) {
     if (mode === "Create") {
       if (newPro.countProduct > 1) {

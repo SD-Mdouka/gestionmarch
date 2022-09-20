@@ -4,17 +4,11 @@ import { ReadList } from "../../helpers/CreateProduct";
 import ListProduct from "./ListProduct";
 
 const OutPute = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
-  const [ModeList, setModeList] = useState(true);
-  const [ListSearch, setListSearch] = useState([]);
   const params = {
     btnUpdate,
     setBtnUpdate,
     NbIndex,
     setNbIndex,
-    ModeList,
-    setModeList,
-    ListSearch,
-    setListSearch,
   };
   return (
     <div className="output">
@@ -25,12 +19,7 @@ const OutPute = ({ btnUpdate, setBtnUpdate, NbIndex, setNbIndex }) => {
           name="Searche"
           type={"text"}
           onKeyUp={(e) => {
-            if (e.target.value === "") {
-              setModeList(true);
-            } else {
-              setListSearch(SearchData(e.target.value, ReadList()));
-              setModeList(false);
-            }
+            SearchData(e.target.value, ReadList());
           }}
         />
         <div className="btnSearch">

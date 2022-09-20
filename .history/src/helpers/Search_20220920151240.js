@@ -9,7 +9,6 @@ export function getSearch(mode) {
   }
   inputSerach.placeholder = "Serach By " + searchMode;
   inputSerach.focus();
-  inputSerach.vlaue = "";
 }
 
 export function SearchData(vlaue, productList) {

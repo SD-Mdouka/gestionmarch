@@ -1,4 +1,3 @@
-import { ClearIndput } from "./ClearInput";
 let productList;
 if (localStorage.product != null) {
   productList = JSON.parse(localStorage.product);
@@ -29,33 +28,22 @@ export function CreateProduct(mode, NbIndex) {
     categoryProduct: inputCategory.value,
   };
   //create product with number the count
-  //clean data for input
-  if (
-    inputTitle.value !== "" &&
-    inputPrice.value !== "" &&
-    inputTva.value !== "" &&
-    inputAds.value !== "" &&
-    inputDiscount.value !== "" &&
-    inputCount.value < 100
-  ) {
-    if (mode === "Create") {
-      if (newPro.countProduct > 1) {
-        for (let i = 0; i < newPro.countProduct; i++) {
-          productList.push(newPro);
-        }
-      } else {
+  if (mode === "Create") {
+    if (newPro.countProduct > 1) {
+      for (let i = 0; i < newPro.countProduct; i++) {
         productList.push(newPro);
       }
-      // //save in local storage
-      localStorage.setItem("product", JSON.stringify(productList));
-      window.location.reload();
-    } else if (mode === "Update") {
-      productList[NbIndex] = newPro;
-      localStorage.setItem("product", JSON.stringify(productList));
-
-      inputCount.style.display = "block";
+    } else {
+      productList.push(newPro);
     }
-    ClearIndput();
+    // //save in local storage
+    localStorage.setItem("product", JSON.stringify(productList));
+    window.location.reload();
+  } else if (mode === "Update") {
+    productList[NbIndex] = newPro;
+    localStorage.setItem("product", JSON.stringify(productList[NbIndex]));
+
+    inputCount.style.display = "block";
   }
 }
 export function ReadList() {

@@ -1,4 +1,5 @@
 import React from "react";
+import { ClearIndput } from "../../helpers/ClearInput";
 import { CreateProduct, ReadList } from "../../helpers/CreateProduct";
 import InputTotal from "./InputTotal";
 const Inpute = ({ btnUpdate, setBtnUpdate, NbIndex }) => {
@@ -13,6 +14,7 @@ const Inpute = ({ btnUpdate, setBtnUpdate, NbIndex }) => {
       CreateProduct(mode, NbIndex);
       setBtnUpdate(false);
     }
+    ClearIndput();
     ReadList();
   };
 

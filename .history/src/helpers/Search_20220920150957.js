@@ -9,12 +9,11 @@ export function getSearch(mode) {
   }
   inputSerach.placeholder = "Serach By " + searchMode;
   inputSerach.focus();
-  inputSerach.vlaue = "";
 }
 
 export function SearchData(vlaue, productList) {
   let list = [];
-  if (searchMode === "Titel") {
+  if (searchMode === "title") {
     for (let i = 0; i < productList.length; i++) {
       if (productList[i].titleProduct.includes(vlaue)) {
         list.push(productList[i]);
